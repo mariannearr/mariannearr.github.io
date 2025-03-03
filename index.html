@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Marianne A</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🎓</text></svg>">
+
+  <!-- Montserrat font from Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Local Font Awesome CSS -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+
+  <!-- Local Academicons CSS -->
+  <link rel="stylesheet" href="assets/academicons/css/academicons.min.css" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 40px auto;
+      max-width: 1200px;
+      line-height: 1.7;
+      background-color: #f4f4f9;
+      color: #222;
+    }
+    .content-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      width: 100%;
+    }
+    .sidebar {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
+    .name {
+      font-size: 40px;
+      font-weight: 600;
+      color: #000;
+      line-height: 1.1;
+      text-align: left;
+    }
+    .last-name {
+      font-weight: 500;
+      color: #222;
+      font-size: 35px;
+    }
+    .content {
+      flex: 1;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .demo-container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #0046b3;
+    }
+    .description {
+        font-size: 26px;
+        font-weight: 650;
+        color: black;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .paper {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .paper img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: left;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .social-icons a {
+      font-size: 24px;
+      color: #222;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #0073e6;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      margin-top: 6px;
+    }
+    .connect {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f0f2f5;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .connect h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .connect p {
+      margin: 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-container">
+    <div class="sidebar">
+      <div class="name">
+        Marianne <br> <span class="last-name">Arriola</span>
+      </div>
+      <p>CS PhD Student @ Cornell<br>advised by <a href="https://www.cs.cornell.edu/~kuleshov/">Volodymyr Kuleshov</a></p>
+      <div class="location">
+        <i class="fa-solid fa-location-dot"></i> New York City
+      </div>
+      <div class="social-icons">
+        <!-- Google Scholar icon from Academicons -->
+        <a href="https://scholar.google.com/citations?user=gSTuQicAAAAJ&hl=en" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="https://x.com/mariannearr" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://github.com/mariannearriola" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/marianne-arriola" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="connect">
+        <h3>Let's Connect!</h3>
+        <p>ma2238 [at] cornell.edu</p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="demo-container">
+        <h2 class="description">I design diffusion language models, a revolutionary new way to generate text.</h2>
+        <p>
+            Unlike traditional language models that generate one token at a time,
+            diffusion models output tokens in parallel.
+            My research explores novel diffusion language models and architectures to enhance their
+            quality, generation speed, and training efficiency.
+        </p>
+      </div>
+      <div class="section">
+        <h2>Selected Papers</h2>
+        <div class="paper" style="margin-bottom: 50px;">
+          <p>
+            <strong>Arriola, M.</strong>, Sahoo, S. S., Gokaslan, A., Yang, Z.,
+            Qi, Z., Han, J., Chiu, J. T., Kuleshov, V.
+            <i
+              >Block Diffusion: Interpolating Between Autoregressive and
+              Diffusion Language Models.</i
+            >
+            <b>ICLR 2025 (Oral, Top 1.77%).</b>
+            <a href="https://openreview.net/forum?id=tyEyYT267x">[Paper]</a>
+            <a href="https://mariannearriola.github.io/bd3-lms/">[Blog]</a>
+            <a href="https://github.com/kuleshov-group/bd3-lms">[Code]</a>
+          </p>
+          <center>
+            <img
+                src="assets/bd3_lms.gif"
+                alt="Block Diffusion Paper Visualization"
+            />
+          </center>
+        </div>
+        <div class="paper">
+          <p>
+            Sahoo, S., <strong>Arriola, M.</strong>, Schiff, Y., Gokaslan, A.,
+            Marroquin, E., Chiu, J., Rush, A., Kuleshov, V.
+            <i>Simple and Effective Masked Diffusion Language Models.</i>
+            <b>NeurIPS 2024.</b>
+            <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb0b13cc515724ab8015bc978fdde0ad-Abstract-Conference.html">[Paper]</a>
+            <a href="https://s-sahoo.com/mdlm/">[Blog]</a>
+            <a href="https://github.com/kuleshov-group/mdlm">[Code]</a>
+          </p>
+          <center>
+            <img
+                src="assets/mdlm.png"
+                alt="Masked Diffusion Paper Visualization"
+                style="width: 50%; height: 50%;"
+            />
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
