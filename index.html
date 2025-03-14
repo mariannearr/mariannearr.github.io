@@ -221,14 +221,7 @@
           <i class="fa-brands fa-linkedin"></i>
         </a>
       </div>
-      <!-- About Me Dropdown -->
-      <div class="dropdown">
-        <button id="dropdownButton">More about me ▼</button>
-        <div id="dropdownContent" class="dropdown-content">
-          <p>I am a second-year PhD student at Cornell Tech. Previously, I completed my B.S. in Computer Science at UC Santa Barbara's College of Creative Studies.<br><br>During my undergrad, I've done small projects in <a href="https://oge.mit.edu/msrp/wp-content/uploads/sites/2/2022/09/Arriola-Marianne-MSRP-Final-Poster.pdf">geometric deep learning</a> at MIT with Prof. Justin Solomon, and in <a href="https://curj.caltech.edu/2022/06/22/identifying-optimal-proteins-by-their-structure-using-graph-neural-networks/">drug design using graph neural networks</a> with Nobel Laureate Frances Arnold.</p>
-        </div>
-      </div>
-            
+
       <div class="connect">
         <h3>Let's Connect!</h3>
         <p>marriola [at] cs.cornell.edu</p>
@@ -245,6 +238,14 @@
           My research explores novel diffusion language models and architectures to enhance their
           quality, generation speed, and training efficiency.
         </p>
+              <!-- About Me Dropdown -->
+        <div class="dropdown">
+          <button id="dropdownButton">More about me ▼</button>
+          <div id="dropdownContent" class="dropdown-content">
+            <p>I am a second-year PhD student at Cornell Tech. Previously, I completed my B.S. in Computer Science at UC Santa Barbara's College of Creative Studies.<br><br>During my undergrad, I've done small projects in <a href="https://oge.mit.edu/msrp/wp-content/uploads/sites/2/2022/09/Arriola-Marianne-MSRP-Final-Poster.pdf">geometric deep learning</a> at MIT with Prof. Justin Solomon, and in <a href="https://curj.caltech.edu/2022/06/22/identifying-optimal-proteins-by-their-structure-using-graph-neural-networks/">drug design using graph neural networks</a> with Nobel Laureate Frances Arnold.</p>
+          </div>
+        </div>
+            
       </div>
       <div class="section">
         <h2>Selected Papers</h2>
@@ -287,10 +288,10 @@
     dropdownButton.addEventListener('click', function() {
       if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
         dropdownContent.style.display = "block";
-        dropdownButton.textContent = "About Me ▲";
+        dropdownButton.textContent = "More about me ▲";
       } else {
         dropdownContent.style.display = "none";
-        dropdownButton.textContent = "About Me ▼";
+        dropdownButton.textContent = "More about me ▼";
       }
     });
   </script>
