@@ -57,6 +57,43 @@
       color: #222;
       font-size: 35px;
     }
+    .navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .navigation li {
+      margin-bottom: 10px;
+    }
+    .navigation a {
+      text-decoration: none;
+      color: #0073e6;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .navigation a:hover {
+      text-decoration: underline;
+    }
+    .dropdown {
+      margin: 20px 0;
+    }
+    .dropdown button {
+      background-color: transparent;
+      border: none;
+      color: #0073e6;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #f0f2f5;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #222;
+    }
     .content {
       flex: 1;
       background: white;
@@ -162,6 +199,7 @@
       <div class="name">
         Marianne <br> <span class="last-name">Arriola</span>
       </div>
+      
       <p>
         CS PhD Student @ Cornell<br>
         advised by <a href="https://www.cs.cornell.edu/~kuleshov/">Volodymyr Kuleshov</a>
@@ -183,6 +221,14 @@
           <i class="fa-brands fa-linkedin"></i>
         </a>
       </div>
+      <!-- About Me Dropdown -->
+      <div class="dropdown">
+        <button id="dropdownButton">More about me ▼</button>
+        <div id="dropdownContent" class="dropdown-content">
+          <p>I am a second-year PhD student at Cornell Tech. Previously, I completed my B.S. in Computer Science at UC Santa Barbara's College of Creative Studies.<br><br>During my undergrad, I've done small projects in <a href="https://oge.mit.edu/msrp/wp-content/uploads/sites/2/2022/09/Arriola-Marianne-MSRP-Final-Poster.pdf">geometric deep learning</a> at MIT with Prof. Justin Solomon, and in <a href="https://curj.caltech.edu/2022/06/22/identifying-optimal-proteins-by-their-structure-using-graph-neural-networks/">drug design using graph neural networks</a> with Nobel Laureate Frances Arnold.</p>
+        </div>
+      </div>
+            
       <div class="connect">
         <h3>Let's Connect!</h3>
         <p>marriola [at] cs.cornell.edu</p>
@@ -233,5 +279,20 @@
       </div>
     </div>
   </div>
+  
+  <script>
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownContent = document.getElementById('dropdownContent');
+    
+    dropdownButton.addEventListener('click', function() {
+      if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+        dropdownContent.style.display = "block";
+        dropdownButton.textContent = "About Me ▲";
+      } else {
+        dropdownContent.style.display = "none";
+        dropdownButton.textContent = "About Me ▼";
+      }
+    });
+  </script>
 </body>
 </html>
