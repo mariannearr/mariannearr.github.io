@@ -71,7 +71,8 @@
       font-size: 18px;
       font-weight: 600;
     }
-    .navigation a:hover {
+    .navigation a:hover,
+    .navigation a.active {
       text-decoration: underline;
     }
     .dropdown {
@@ -133,8 +134,9 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       margin-bottom: 50px;
+      padding: 15px;
+      background: #fff;
     }
-    /* Remove extra padding under the last paper */
     .paper:last-child {
       margin-bottom: -15px;
     }
@@ -144,6 +146,34 @@
       height: auto;
       border-radius: 8px;
       margin-top: 10px;
+    }
+    /* News section styles */
+    .news-container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 0px;
+    }
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-item {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .news-date {
+      color: #0073e6;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+    .news-item a {
+      color: #0073e6;
+    }
+    .news-item a:hover {
+      text-decoration: underline;
     }
     .social-icons {
       display: flex;
@@ -181,7 +211,6 @@
       margin: 0;
       font-size: 16px;
     }
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       .content-container {
         flex-direction: column;
@@ -200,6 +229,7 @@
         Marianne <br> <span class="last-name">Arriola</span>
       </div>
       
+
       <p>
         CS PhD Student @ Cornell<br>
         advised by <a href="https://www.cs.cornell.edu/~kuleshov/">Volodymyr Kuleshov</a>
@@ -238,17 +268,22 @@
           My research explores novel diffusion language models and architectures to enhance their
           quality, generation speed, and training efficiency.
         </p>
-              <!-- About Me Dropdown -->
+
+        <!-- About Me Dropdown -->
         <div class="dropdown">
           <button id="dropdownButton">More about me ▼</button>
           <div id="dropdownContent" class="dropdown-content">
-            <p>I am a second-year PhD student at Cornell Tech. Previously, I completed my B.S. in Computer Science at UC Santa Barbara's College of Creative Studies.<br><br>During my undergrad, I've done small projects in <a href="https://oge.mit.edu/msrp/wp-content/uploads/sites/2/2022/09/Arriola-Marianne-MSRP-Final-Poster.pdf">geometric deep learning</a> at MIT with Prof. Justin Solomon, and in <a href="https://curj.caltech.edu/2022/06/22/identifying-optimal-proteins-by-their-structure-using-graph-neural-networks/">drug design using graph neural networks</a> with Nobel Laureate Frances Arnold.</p>
+            <p>
+              I am a second-year PhD student at Cornell Tech. Previously, I completed my B.S. in Computer Science at UC Santa Barbara's College of Creative Studies.<br><br>
+              During my undergrad, I've done small projects in <a href="https://oge.mit.edu/msrp/wp-content/uploads/sites/2/2022/09/Arriola-Marianne-MSRP-Final-Poster.pdf">geometric deep learning</a> at MIT with Prof. Justin Solomon, and in <a href="https://curj.caltech.edu/2022/06/22/identifying-optimal-proteins-by-their-structure-using-graph-neural-networks/">drug design using graph neural networks</a> with Nobel Laureate Frances Arnold.
+            </p>
           </div>
         </div>
-            
       </div>
+
       <div class="section">
         <h2>Selected Papers</h2>
+
         <div class="paper">
           <p>
             <strong>Arriola, M.</strong>, Gokaslan, A., Chiu, J. T., Yang, Z.,
@@ -263,6 +298,7 @@
             <img src="assets/bd3.gif" alt="Block Diffusion Paper Visualization" />
           </center>
         </div>
+
         <div class="paper">
           <p>
             Sahoo, S., <strong>Arriola, M.</strong>, Schiff, Y., Gokaslan, A.,
@@ -278,9 +314,29 @@
           </center>
         </div>
       </div>
+
+      <div class="section">
+        <h2>News</h2>
+        <div class="news-container">
+          <ul class="news-list">
+            <li class="news-item">
+              <span class="news-date">May‑30‑25:</span>
+              Invited talk at the ASAP seminar on Block Diffusion.
+            </li>
+            <li class="news-item">
+              <span class="news-date">Apr‑24‑25:</span>
+              Presenting Block Diffusion as an oral at ICLR 2025, main track.
+            </li>
+            <li class="news-item">
+              <span class="news-date">Apr‑16‑25:</span>
+              Invited talk at Amazon AGI on Block Diffusion.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  
+
   <script>
     const dropdownButton = document.getElementById('dropdownButton');
     const dropdownContent = document.getElementById('dropdownContent');
