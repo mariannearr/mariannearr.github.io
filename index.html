@@ -189,12 +189,37 @@
     .social-icons a:hover {
       color: #0073e6;
     }
+    .cv-icon {
+      font-weight: 500;
+      color: #0073e6;
+      padding: 2px 4px;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
+
+    .cv-icon-link:hover .cv-icon {
+      color: #0073e6;
+      text-decoration: underline;
+    }
     .location {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 16px;
       margin-top: 6px;
+    }
+    /* New CV link styling */
+    .cv-link {
+      margin-top: 10px;
+    }
+    .cv-link a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0073e6;
+      text-decoration: none;
+    }
+    .cv-link a:hover {
+      text-decoration: underline;
     }
     .connect {
       margin-top: 20px;
@@ -228,7 +253,6 @@
       <div class="name">
         Marianne <br> <span class="last-name">Arriola</span>
       </div>
-      
 
       <p>
         CS PhD Student @ Cornell<br>
@@ -249,6 +273,9 @@
         </a>
         <a href="https://www.linkedin.com/in/marianne-arriola" title="LinkedIn">
           <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="assets/marianne_cv.pdf" title="CV" target="_blank" rel="noopener" class="cv-icon-link">
+          <span class="cv-icon">CV</span>
         </a>
       </div>
 
