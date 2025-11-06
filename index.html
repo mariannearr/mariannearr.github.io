@@ -20,6 +20,10 @@
     *, *::before, *::after {
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 60px;
+    }
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 40px auto;
@@ -30,11 +34,49 @@
       padding: 0 15px;
       -webkit-text-size-adjust: 100%;
     }
+    /* Navbar styles */
+    .navbar {
+      padding: 5px 5px;
+      border-radius: 12px 12px 0 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(244, 244, 249, 0.95);
+      transition: border-radius 0.2s ease;
+    }
+    .navbar.scrolled {
+      border-radius: 0;
+    }
+    .navbar a {
+      color: #0073e6;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      padding: 4px 0;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+      color: #0046b3;
+    }
+    .navbar a.active {
+      text-decoration: underline;
+      color: #0046b3;
+    }
     .content-container {
       display: flex;
       align-items: flex-start;
       gap: 30px;
-      width: 105%;
+      width: 100%;
+      box-sizing: border-box;
     }
     .sidebar {
       width: 330px;
@@ -101,19 +143,27 @@
     .content {
       flex: 1;
       background: white;
-      padding: 25px;
+      padding: 0;
       border-radius: 12px;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 0;
+      position: relative;
+      box-sizing: border-box;
+      min-width: 0;
     }
     .demo-container {
       text-align: left;
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+      padding: 10px 25px 0px 25px;
+      border-radius: 0;
+      box-shadow: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      box-sizing: border-box;
+      max-width: 100%;
+      overflow-wrap: break-word;
     }
     h2 {
       font-size: 24px;
@@ -132,6 +182,8 @@
     }
     .section {
       margin-bottom: 30px;
+      margin-top: -5px;
+      padding: 0 25px;
     }
     .paper {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -240,12 +292,45 @@
       font-size: 16px;
     }
     @media (max-width: 768px) {
+      .navbar {
+        gap: 25px;
+        padding: 6px 15px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        z-index: 1000;
+      }
+      .navbar a {
+        font-size: 14px;
+      }
+      html {
+        scroll-padding-top: 50px;
+      }
       .content-container {
         flex-direction: column;
+        gap: 0;
+        width: 100%;
       }
       .sidebar {
         width: 100%;
-        margin-bottom: -5px;
+        margin-bottom: -10px;
+      }
+      .content {
+        margin-top: 50px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .demo-container {
+        border-radius: 12px 12px 0 0;
+        box-sizing: border-box;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
       }
     }
   </style>
@@ -288,6 +373,11 @@
       </div>
     </div>
     <div class="content">
+      <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#selected-works">Selected Works</a>
+        <a href="#news">News</a>
+      </nav>
       <div class="demo-container">
         <h2 class="description">
           I design diffusion language models, a new paradigm for parallel text generation.
@@ -311,7 +401,7 @@
         </div>
       </div>
 
-      <div class="section">
+      <div id="selected-works" class="section">
         <h2>Selected Works</h2>
 
         <div class="paper">
@@ -323,6 +413,7 @@
             <a href="https://arxiv.org/abs/2503.09573">[Paper]</a>
             <a href="https://m-arriola.com/bd3lms/">[Blog]</a>
             <a href="https://github.com/kuleshov-group/bd3lms">[Code]</a>
+            <a href="https://docs.google.com/presentation/d/1mqW78IyluA8lfm95cG5TQEeOmtgQo-KzXD6gHmG_sh4/edit?usp=sharing">[Slides]</a>
           </p>
           <center>
             <img src="assets/bd3.gif" alt="Block Diffusion Paper Visualization" />
@@ -375,7 +466,7 @@
         </div>
       </div>
 
-      <div class="section">
+      <div id="news" class="section">
         <h2>News</h2>
         <div class="news-container">
           <ul class="news-list">
@@ -402,6 +493,31 @@
   </div>
 
   <script>
+    // Handle Home link click
+    const homeLink = document.querySelector('.navbar a[href="#"]');
+    if (homeLink) {
+      homeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, null, ' ');
+      });
+    }
+    
+    // Toggle navbar border-radius on scroll
+    const navbar = document.querySelector('.navbar');
+    
+    function updateNavbarBorderRadius() {
+      // When scrolled down, make navbar rectangular
+      if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+    
+    window.addEventListener('scroll', updateNavbarBorderRadius);
+    updateNavbarBorderRadius(); // Check initial state
+    
     const dropdownButton = document.getElementById('dropdownButton');
     const dropdownContent = document.getElementById('dropdownContent');
     
