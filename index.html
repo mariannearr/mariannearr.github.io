@@ -134,16 +134,24 @@
       cursor: pointer;
     }
     .dropdown-content {
-      display: none;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
       margin-top: 0px;
       padding: 0px;
       background: #ffffff;
-      font-size: 16px;
-      color: #000000;
       font-size: 14px;
-      border-left: 2px solid #837e7e; /* pipe-like vertical line */
+      color: #000000;
+      border-left: 1px solid #837e7e; /* pipe-like vertical line */
       padding-left: 20px;
       margin-left: 20px;
+      transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+    .dropdown-content.show {
+      max-height: 500px;
+      opacity: 1;
+      padding-top: 0px;
+      padding-bottom: 0px;
     }
     .content {
       flex: 1;
@@ -392,13 +400,11 @@
         <a href="#news">News</a>
       </nav>
       <div class="demo-container">
-        <h2 class="description">
+        <!-- <h2 class="description">
           I design diffusion language models, a new paradigm for parallel text generation.
-        </h2>
+        </h2> -->
         <p>
-          Unlike traditional language models that generate one token at a time,
-          diffusion models output tokens in parallel.
-          My research explores novel diffusion language models and architectures to enhance their
+          <strong>I design diffusion language models, a new paradigm for parallel text generation.</strong> My PhD research explores novel diffusion language models and architectures to enhance their
           quality, generation speed, and training efficiency.
         </p>
 
@@ -535,11 +541,10 @@
     const dropdownContent = document.getElementById('dropdownContent');
     
     dropdownButton.addEventListener('click', function() {
-      if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
-        dropdownContent.style.display = "block";
+      dropdownContent.classList.toggle('show');
+      if (dropdownContent.classList.contains('show')) {
         dropdownButton.textContent = "More about me ▲";
       } else {
-        dropdownContent.style.display = "none";
         dropdownButton.textContent = "More about me ▼";
       }
     });
