@@ -22,41 +22,41 @@
     }
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 60px;
+      scroll-padding-top: 70px;
     }
     body {
       font-family: 'Montserrat', sans-serif;
-      margin: 40px auto;
+      margin: 0 auto;
       max-width: 1100px;
       line-height: 1.7;
-      background-color: #f4f4f9;
+      background-color: white;
       color: #222;
-      padding: 0 15px;
+      padding: 70px 15px 0;
       -webkit-text-size-adjust: 100%;
     }
     /* Navbar styles */
     .navbar {
-      padding: 5px 5px;
-      border-radius: 12px 12px 0 0;
+      padding: 10px 24px;
       margin: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
-      gap: 40px;
+      gap: 30px;
       flex-wrap: wrap;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
-      background: rgba(244, 244, 249, 0.95);
-      transition: border-radius 0.2s ease;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
     .navbar.scrolled {
-      border-radius: 0;
+      border-bottom-color: rgba(0, 0, 0, 0.12);
     }
     .navbar a {
-      color: #0073e6;
+      color: black;
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
@@ -83,7 +83,6 @@
       background: white;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
       text-align: left;
       flex-shrink: 0;
       position: sticky;
@@ -158,7 +157,6 @@
       background: white;
       padding: 0;
       border-radius: 12px;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -218,9 +216,6 @@
     /* News section styles */
     .news-container {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
       margin-bottom: 0px;
     }
     .news-list {
@@ -290,11 +285,8 @@
       text-decoration: underline;
     }
     .connect {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #f0f2f5;
-      border-radius: 8px;
-      text-align: center;
+      margin-top: 5px;
+      text-align: left;
     }
     .connect h3 {
       margin: 0 0 2px;
@@ -306,10 +298,10 @@
     }
     @media (max-width: 768px) {
       body {
-        margin-top: 0;
+        padding-top: 58px;
       }
       .navbar {
-        gap: 25px;
+        gap: 28px;
         padding: 6px 15px;
         position: fixed;
         top: 0;
@@ -317,14 +309,13 @@
         right: 0;
         width: 100%;
         margin: 0;
-        border-radius: 0;
         z-index: 1000;
       }
       .navbar a {
         font-size: 14px;
       }
       html {
-        scroll-padding-top: 50px;
+        scroll-padding-top: 58px;
       }
       .content-container {
         flex-direction: column;
@@ -357,6 +348,11 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#selected-works">Selected Works</a>
+    <a href="#news">News</a>
+  </nav>
   <div class="content-container">
     <div class="sidebar">
       <div class="name">
@@ -389,35 +385,21 @@
       </div>
 
       <div class="connect">
-        <h3>Let's Connect!</h3>
-        <p>marriola [at] cs.cornell.edu</p>
+        <p><i class="fa-solid fa-envelope"> </i> &nbsp; marriola [at] cs.cornell.edu</p>
       </div>
     </div>
     <div class="content">
-      <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#selected-works">Selected Works</a>
-        <a href="#news">News</a>
-      </nav>
       <div class="demo-container">
         <!-- <h2 class="description">
           I design diffusion language models, a new paradigm for parallel text generation.
         </h2> -->
         <p>
-          <strong>I design diffusion language models, a new paradigm for parallel text generation.</strong> My PhD research explores novel diffusion language models and architectures to enhance their
-          quality, generation speed, and training efficiency.
+          <strong>I design diffusion language models for parallel, flexible-order text generation.</strong> My PhD research explores novel diffusion language modeling paradigms and architectures to enhance their
+          quality, generation speed, and training efficiency. Notably, I led the development of <a href="https://m-arriola.com/bd3lms/">Block Diffusion</a>, which was featured as an oral at ICLR 2025. 
+          
+          <br><br>
+          I am interning at NVIDIA Research with <a href="https://pmolchanov.com">Pavlo Molchanov</a> and have previously interned at Runway AI with <a href="https://agermanidis.com">Anastasis Germanidis</a>. My CV is available <a href="assets/marianne_cv.pdf">here</a>.
         </p>
-
-        <!-- About Me Dropdown -->
-        <div class="dropdown">
-          <button id="dropdownButton">More about me ▼</button>
-          <div id="dropdownContent" class="dropdown-content">
-            <p>
-              I have previously interned at <a href="https://runwayml.com">Runway AI</a>, where I worked with <a href="https://agermanidis.com">Anastasis Germanidis.</a>
-              I completed my B.S. in Computer Science at <a href="https://ccs.ucsb.edu/majors/computing">UC Santa Barbara's College of Creative Studies.</a> During my undergrad, I've done small projects in <a href="https://oge.mit.edu/msrp/wp-content/uploads/sites/2/2022/09/Arriola-Marianne-MSRP-Final-Poster.pdf">geometric deep learning</a> at MIT CSAIL with <a href="https://people.csail.mit.edu/jsolomon/">Prof. Justin Solomon</a>, and in <a href="https://curj.caltech.edu/2022/06/22/identifying-optimal-proteins-by-their-structure-using-graph-neural-networks/">drug design using graph neural networks</a> with <a href="https://cce.caltech.edu/people/frances-h-arnold">Nobel Laureate Frances Arnold</a>.
-            </p>
-          </div>
-        </div>
       </div>
 
       <div id="selected-works" class="section">
@@ -447,6 +429,7 @@
             <a href="https://arxiv.org/abs/2510.22852">[Paper]</a>
             <a href="https://m-arriola.com/e2d2/">[Blog]</a>
             <a href="https://github.com/kuleshov-group/e2d2">[Code]</a>
+            <a href="https://docs.google.com/presentation/d/1tFT8Ud6SVzYvis81PqPUt91TQxb7fHGhmJHsP0c5iOk/edit?usp=sharing">[Slides]</a>
           </p>
             <video autoplay loop muted playsinline width="100%">
               <source src="assets/e2d2.mp4" type="video/mp4" />
@@ -490,8 +473,12 @@
         <div class="news-container">
           <ul class="news-list">
             <li class="news-item">
+              <span class="news-date">Feb-26:</span>
+              I gave a talk at Meta FAIR on E2D2.
+            </li>
+            <li class="news-item">
               <span class="news-date">Jan-26:</span>
-              I advanced to PhD candidacy! I will also be starting an internship this summer at NVIDIA Research!
+              I advanced to PhD candidacy! I will also be starting an internship at NVIDIA Research!
             </li>
             <li class="news-item">
               <span class="news-date">Oct-25:</span>
@@ -544,14 +531,16 @@
     const dropdownButton = document.getElementById('dropdownButton');
     const dropdownContent = document.getElementById('dropdownContent');
     
-    dropdownButton.addEventListener('click', function() {
-      dropdownContent.classList.toggle('show');
-      if (dropdownContent.classList.contains('show')) {
-        dropdownButton.textContent = "More about me ▲";
-      } else {
-        dropdownButton.textContent = "More about me ▼";
-      }
-    });
+    if (dropdownButton && dropdownContent) {
+      dropdownButton.addEventListener('click', function() {
+        dropdownContent.classList.toggle('show');
+        if (dropdownContent.classList.contains('show')) {
+          dropdownButton.textContent = "More about me ▲";
+        } else {
+          dropdownButton.textContent = "More about me ▼";
+        }
+      });
+    }
   </script>
 </body>
 </html>
