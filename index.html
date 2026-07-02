@@ -21,7 +21,6 @@
       box-sizing: border-box;
     }
     html {
-      scroll-behavior: smooth;
       scroll-padding-top: 70px;
     }
     body {
@@ -227,6 +226,9 @@
       margin-bottom: 15px;
       line-height: 1.5;
     }
+    .news-item.is-hidden {
+      display: none;
+    }
     .news-date {
       color: #0073e6;
       font-weight: 600;
@@ -237,6 +239,29 @@
     }
     .news-item a:hover {
       text-decoration: underline;
+    }
+    .news-toggle {
+      align-items: center;
+      background: #f7f7f7;
+      border: 1px solid #d8d8d8;
+      border-radius: 6px;
+      color: #222;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      gap: 6px;
+      padding: 4px 10px;
+    }
+    .news-toggle:hover {
+      background: #eeeeee;
+      border-color: #c8c8c8;
+    }
+    .news-toggle-arrow {
+      color: #0073e6;
+      font-size: 12px;
+      line-height: 1;
     }
     .social-icons {
       display: flex;
@@ -361,11 +386,11 @@
       </div>
 
       <p>
-        3rd-year Cornell CS PhD Candidate<br>
+        Final-year Cornell CS PhD<br>
         advised by <a href="https://www.cs.cornell.edu/~kuleshov/">Volodymyr Kuleshov</a>
       </p>
       <div class="location">
-        <i class="fa-solid fa-location-dot"></i> New York City
+        <i class="fa-solid fa-location-dot"></i> NYC
       </div>
       <div class="social-icons">
         <a href="https://scholar.google.com/citations?user=gSTuQicAAAAJ&hl=en" title="Google Scholar">
@@ -395,11 +420,14 @@
           I design diffusion language models, a new paradigm for parallel text generation.
         </h2> -->
         <p>
-          <strong>I design diffusion language models for parallel, flexible-order text generation.</strong> My PhD research explores novel diffusion language modeling paradigms and architectures to enhance their
-          quality, generation speed, and training efficiency. Notably, I led the development of <a href="https://m-arriola.com/bd3lms/">Block Diffusion</a>, which was featured as an oral at ICLR 2025. 
+          <strong>I develop diffusion language models for parallel, flexible-order text generation</strong>, with first-author publications at ICML, NeurIPS, and ICLR. My PhD research explores novel diffusion language modeling paradigms and architectures to enhance their
+          quality, generation speed, and training efficiency. Notably, I led the development of <a href="https://m-arriola.com/bd3lms/">Block Diffusion</a>, featured as an oral at ICLR 2025, which is adopted by dLLMs at <a href="https://deepmind.google/models/gemma/diffusiongemma/">Google</a>, <a href="https://research.nvidia.com/publication/2026-05_nemotron-labs-diffusion-tri-mode-language-model-unifying-autoregressive">NVIDIA</a>, <a href="https://arxiv.org/abs/2509.04185">Meta</a>, <a href="https://seed.bytedance.com/en/seed_diffusion">ByteDance</a>, and others.
           
           <br><br>
           I am interning at NVIDIA Research with <a href="https://pmolchanov.com">Pavlo Molchanov</a> and have previously interned at Runway AI with <a href="https://agermanidis.com">Anastasis Germanidis</a>. My CV is available <a href="assets/marianne_cv.pdf">here</a>.
+        </p>
+        <p>
+          <strong>I am on the job market starting Summer 2027.</strong> Please reach out if you know of research roles in generative modeling that may be a good fit.
         </p>
       </div>
 
@@ -419,6 +447,23 @@
           </p>
           <center>
             <img src="assets/bd3.gif" alt="Block Diffusion Paper Visualization" />
+          </center>
+        </div>
+
+        <div class="paper">
+          <p>
+            <strong>Arriola, M.</strong> and Kuleshov, V.
+            <i>Set Diffusion: Interpolating Token Orderings Between Autoregression and Diffusion for Fast and Flexible Decoding.</i>
+            <b>ICML 2026.</b>
+            <a href="#">[Paper]</a>
+            <a href="https://m-arriola.com/setdlms/">[Blog]</a>
+            <a href="https://github.com/kuleshov-group/setdlms">[Code]</a>
+          </p>
+          <center>
+            <video autoplay loop muted playsinline width="80%">
+              <source src="assets/setdlm.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </center>
         </div>
 
@@ -474,30 +519,42 @@
         <div class="news-container">
           <ul class="news-list">
             <li class="news-item">
+              <span class="news-date">Jun-26:</span>
+              I am an organizer for the first workshop on "Non-Autoregressive Language Models for Fast &amp; Flexible Text Generation" at COLM 2026!
+            </li>
+            <li class="news-item">
+              <span class="news-date">May-26:</span>
+              Set diffusion LMs accepted to ICML 2026. I was also recognized as a Top Reviewer!
+            </li>
+            <li class="news-item">
               <span class="news-date">Feb-26:</span>
               I gave a talk at Meta FAIR on E2D2.
             </li>
-            <li class="news-item">
+            <li class="news-item is-hidden">
               <span class="news-date">Jan-26:</span>
               I advanced to PhD candidacy! I will also be starting an internship at NVIDIA Research!
             </li>
-            <li class="news-item">
+            <li class="news-item is-hidden">
               <span class="news-date">Oct-25:</span>
               Encoder-decoder diffusion LMs paper accepted to NeurIPS 2025. I was also recognized as a Top Reviewer!
             </li>
-            <li class="news-item">
+            <li class="news-item is-hidden">
               <span class="news-date">Jun-25:</span>
               Started a summer internship at <a href="https://runwayml.com">Runway</a> in NYC!
             </li>
-            <li class="news-item">
+            <li class="news-item is-hidden">
               <span class="news-date">Apr‑25:</span>
               Presenting Block Diffusion as an oral at ICLR 2025, main track.
             </li>
-            <li class="news-item">
+            <li class="news-item is-hidden">
               <span class="news-date">Apr‑25:</span>
               Invited talk at Amazon AGI on Block Diffusion.
             </li>
           </ul>
+          <button class="news-toggle" type="button" aria-expanded="false">
+            <span class="news-toggle-label">See More</span>
+            <span class="news-toggle-arrow" aria-hidden="true">▼</span>
+          </button>
         </div>
       </div>
       <!-- <div id="other" class="section">
@@ -507,16 +564,49 @@
   </div>
 
   <script>
-    // Handle Home link click
-    const homeLink = document.querySelector('.navbar a[href="#"]');
-    if (homeLink) {
-      homeLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        history.replaceState(null, null, ' ');
-      });
+    function fastScrollTo(targetTop, duration) {
+      const startTop = window.scrollY;
+      const distance = targetTop - startTop;
+      const startTime = performance.now();
+
+      function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        window.scrollTo(0, startTop + distance * easedProgress);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
     }
-    
+
+    document.querySelectorAll('.navbar a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const href = link.getAttribute('href');
+
+        if (href === '#') {
+          e.preventDefault();
+          fastScrollTo(0, 250);
+          history.replaceState(null, null, ' ');
+          return;
+        }
+
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          e.preventDefault();
+          const scrollPaddingTop = parseInt(getComputedStyle(document.documentElement).scrollPaddingTop, 10) || 0;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - scrollPaddingTop;
+          fastScrollTo(targetTop, 250);
+          history.pushState(null, null, href);
+        }
+      });
+    });
+
     // Toggle navbar border-radius on scroll
     const navbar = document.querySelector('.navbar');
     
@@ -543,6 +633,23 @@
         } else {
           dropdownButton.textContent = "More about me ▼";
         }
+      });
+    }
+
+    const newsToggle = document.querySelector('.news-toggle');
+    const newsToggleLabel = document.querySelector('.news-toggle-label');
+    const newsToggleArrow = document.querySelector('.news-toggle-arrow');
+    const hiddenNewsItems = document.querySelectorAll('.news-item.is-hidden');
+
+    if (newsToggle && newsToggleLabel && newsToggleArrow && hiddenNewsItems.length > 0) {
+      newsToggle.addEventListener('click', function() {
+        const isExpanded = newsToggle.getAttribute('aria-expanded') === 'true';
+        hiddenNewsItems.forEach(function(item) {
+          item.style.display = isExpanded ? 'none' : 'list-item';
+        });
+        newsToggle.setAttribute('aria-expanded', String(!isExpanded));
+        newsToggleLabel.textContent = isExpanded ? 'See More' : 'See Less';
+        newsToggleArrow.textContent = isExpanded ? '▼' : '▲';
       });
     }
   </script>
