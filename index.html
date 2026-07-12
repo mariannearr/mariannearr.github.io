@@ -90,6 +90,15 @@
       max-height: none;
       overflow-y: visible;
     }
+    .sidebar-photo {
+      display: block;
+      width: min(100%, 200px);
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
     .name {
       font-size: 40px;
       font-weight: 600;
@@ -357,6 +366,9 @@
         max-height: none;
         overflow-y: visible;
       }
+      .sidebar-photo {
+        width: min(100%, 180px);
+      }
       .content {
         margin-top: 0;
         width: 100%;
@@ -381,6 +393,7 @@
   </nav>
   <div class="content-container">
     <div class="sidebar">
+      <img class="sidebar-photo" src="assets/marianne.jpeg" alt="Marianne Arriola" />
       <div class="name">
         Marianne <br> Arriola
       </div>
