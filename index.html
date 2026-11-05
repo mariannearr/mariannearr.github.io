@@ -221,6 +221,35 @@
       border-radius: 8px;
       margin-top: 10px;
     }
+    /* Talks section styles */
+    .talks-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .talk-item {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .talk-date {
+      color: #0073e6;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .talk-venue {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .talk-type {
+      font-weight: 400;
+    }
+    .talk-item a:hover {
+      text-decoration: underline;
+    }
     /* News section styles */
     .news-container {
       background: #fff;
@@ -335,7 +364,7 @@
         padding-top: 58px;
       }
       .navbar {
-        gap: 28px;
+        gap: 18px;
         padding: 6px 15px;
         position: fixed;
         top: 0;
@@ -389,6 +418,7 @@
   <nav class="navbar">
     <a href="#">Home</a>
     <a href="#selected-works">Selected Works</a>
+    <a href="#talks">Talks</a>
     <a href="#news">News</a>
   </nav>
   <div class="content-container">
@@ -523,6 +553,47 @@
             <img src="assets/mdlm.png" alt="Masked Diffusion Paper Visualization" style="width: 50%; height: auto;" />
           </center>
         </div>
+      </div>
+
+      <div id="talks" class="section">
+        <h2>Talks</h2>
+        <ul class="talks-list">
+          <li class="talk-item">
+            <time class="talk-date" datetime="2026-10">Oct 2026</time>
+            <div>
+              <span class="talk-venue">IBM &amp; Flatiron Insitute &middot; <span class="talk-type">EDPM Workshop</span></span>
+              <a href="https://edpmworkshop.github.io/">Designing Generation Order in Discrete Generative Models</a>
+            </div>
+          </li>
+          <li class="talk-item">
+            <time class="talk-date" datetime="2026-02">Feb 2026</time>
+            <div>
+              <span class="talk-venue">Meta Fundamental AI Research (FAIR)</span>
+              Encoder-Decoder Diffusion (E2D2)
+            </div>
+          </li>
+          <li class="talk-item">
+            <time class="talk-date" datetime="2025-12">Dec 2025</time>
+            <div>
+              <span class="talk-venue">NeurIPS 2025</span>
+              <a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/119836">Encoder-Decoder Diffusion Language Models for Efficient Training and Inference (E2D2)</a>
+            </div>
+          </li>
+          <li class="talk-item">
+            <time class="talk-date" datetime="2025-04">Apr 2025</time>
+            <div>
+              <span class="talk-venue">International Conference on Learning Representations (ICLR) &middot; <span class="talk-type">Oral</span></span>
+              <a href="https://iclr.cc/virtual/2025/oral/31749">Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models</a>
+            </div>
+          </li>
+          <li class="talk-item">
+            <time class="talk-date" datetime="2025-04">Apr 2025</time>
+            <div>
+              <span class="talk-venue">Amazon Artificial General Intelligence (AGI)</span>
+              Block Diffusion
+            </div>
+          </li>
+        </ul>
       </div>
 
       <div id="news" class="section">
