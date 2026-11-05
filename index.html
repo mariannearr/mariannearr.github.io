@@ -261,6 +261,9 @@
       margin: 0;
     }
     .news-item {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr);
+      gap: 12px;
       margin-bottom: 15px;
       line-height: 1.5;
     }
@@ -270,7 +273,6 @@
     .news-date {
       color: #555;
       font-weight: 600;
-      margin-right: 8px;
       white-space: nowrap;
     }
     .news-item a {
@@ -603,23 +605,23 @@
           <ul class="news-list">
             <li class="news-item">
               <time class="news-date" datetime="2026-06">Jun 2026</time>
-              I am an organizer for the first workshop on "Non-Autoregressive Language Models for Fast &amp; Flexible Text Generation" at COLM 2026!
+              <div>I am an organizer for the first workshop on "Non-Autoregressive Language Models for Fast &amp; Flexible Text Generation" at COLM 2026!</div>
             </li>
             <li class="news-item">
               <time class="news-date" datetime="2026-05">May 2026</time>
-              Set diffusion LMs accepted to ICML 2026. I was also recognized as a Top Reviewer!
+              <div>Set diffusion LMs accepted to ICML 2026. I was also recognized as a Top Reviewer!</div>
             </li>
             <li class="news-item">
               <time class="news-date" datetime="2026-01">Jan 2026</time>
-              I advanced to PhD candidacy! I will also be starting an internship at NVIDIA Research!
+              <div>I advanced to PhD candidacy! I will also be starting an internship at NVIDIA Research!</div>
             </li>
             <li class="news-item is-hidden">
               <time class="news-date" datetime="2025-10">Oct 2025</time>
-              Encoder-decoder diffusion LMs paper accepted to NeurIPS 2025. I was also recognized as a Top Reviewer!
+              <div>Encoder-decoder diffusion LMs paper accepted to NeurIPS 2025. I was also recognized as a Top Reviewer!</div>
             </li>
             <li class="news-item is-hidden">
               <time class="news-date" datetime="2025-06">Jun 2025</time>
-              Started a summer internship at <a href="https://runwayml.com">Runway</a> in NYC!
+              <div>Started a summer internship at <a href="https://runwayml.com">Runway</a> in NYC!</div>
             </li>
           </ul>
           <button class="news-toggle" type="button" aria-expanded="false">
@@ -716,7 +718,7 @@
       newsToggle.addEventListener('click', function() {
         const isExpanded = newsToggle.getAttribute('aria-expanded') === 'true';
         hiddenNewsItems.forEach(function(item) {
-          item.style.display = isExpanded ? 'none' : 'list-item';
+          item.style.display = isExpanded ? 'none' : 'grid';
         });
         newsToggle.setAttribute('aria-expanded', String(!isExpanded));
         newsToggleLabel.textContent = isExpanded ? 'See More' : 'See Less';
